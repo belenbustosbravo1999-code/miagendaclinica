@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pacientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-text color="warning" *ngIf="modoOffline">
+    <p><strong>Sin internet:</strong> mostrando datos almacenados.</p>
+  </ion-text>
+
+  <ion-list *ngIf="pacientes.length > 0; else sinDatos">
+    <ion-item *ngFor="let p of pacientes">
+      <ion-label>
+        <h2>{{ p.name }}</h2>
+        <p>{{ p.email }} — {{ p.phone }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #sinDatos>
+    <ion-text color="medium">
+      <p>No hay pacientes para mostrar.</p>
+    </ion-text>
+  </ng-template>
+
+</ion-content>

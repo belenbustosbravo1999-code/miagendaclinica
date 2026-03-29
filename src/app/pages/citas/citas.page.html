@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Seleccionar Especialidad</ion-card-title>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item
+        *ngFor="let esp of especialidades"
+        button
+        (click)="seleccionarEspecialidad(esp)"
+        [color]="especialidadSeleccionada === esp ? 'light' : ''"
+      >
+        <ion-label>{{ esp.nombre }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <div *ngIf="especialidadSeleccionada">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Horas disponibles - {{ especialidadSeleccionada.nombre }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-list>
+        <ion-item
+          *ngFor="let hora of especialidadSeleccionada.horas"
+          button
+          (click)="seleccionarHora(hora)"
+          [color]="horaSeleccionada === hora ? 'success' : ''"
+        >
+          <ion-label>{{ hora }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-card-content *ngIf="horaSeleccionada">
+        <p>
+          <strong>Hora seleccionada:</strong> {{ horaSeleccionada }}<br />
+          <strong>Especialidad:</strong> {{ especialidadSeleccionada.nombre }}
+        </p>
+        <ion-button expand="block" color="primary">Confirmar cita</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,25 @@
+:root {
+  /* 🎨 Colores principales de la app */
+  --ion-color-primary: #006d77;
+  --ion-color-secondary: #83c5be;
+  --ion-color-tertiary: #edf6f9;
+  --ion-color-success: #06d6a0;
+  --ion-color-warning: #ffd166;
+  --ion-color-danger: #ef476f;
+  --ion-color-dark: #073b4c;
+  --ion-color-medium: #118ab2;
+  --ion-color-light: #f1faee;
+
+  /* 🌈 Personalización extra */
+  --ion-background-color: #e0f7fa;
+  --ion-text-color: #003c46;
+}
+
+/* 🌙 Tema oscuro opcional (se activa con prefers-color-scheme: dark) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-color-primary: #00afb9;
+    --ion-background-color: #121212;
+    --ion-text-color: #f1f1f1;
+  }
+}

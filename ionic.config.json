@@ -1,0 +1,7 @@
+{
+  "name": "MiAgendaClinicaStandalone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Agenda Clínica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-segment [(ngModel)]="segmentoActual">
+    <ion-segment-button value="mis-datos">
+      <ion-label>Mis Datos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="experiencia">
+      <ion-label>Experiencia</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="certificaciones">
+      <ion-label>Certificaciones</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div style="margin-top: 12px;">
+    <ng-container [ngSwitch]="segmentoActual">
+      <div *ngSwitchCase="'mis-datos'" @fadeSlide>
+        <app-mis-datos></app-mis-datos>
+      </div>
+
+      <div *ngSwitchCase="'experiencia'" @fadeSlide>
+        <app-experiencia-laboral></app-experiencia-laboral>
+      </div>
+
+      <div *ngSwitchCase="'certificaciones'" @fadeSlide>
+        <app-certificaciones></app-certificaciones>
+      </div>
+    </ng-container>
+  </div>
+
+</ion-content>
