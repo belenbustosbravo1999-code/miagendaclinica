@@ -171,24 +171,4 @@ Diagramas
 # 12. Conclusión
 
 El proyecto permitió aplicar conocimientos de programación en Python, conexión con bases de datos MySQL y metodologías ágiles para el desarrollo de software.
-
-
-
-
-Además, se fortalecieron habilidades relacionadas con documentación, organización de tareas y desarrollo de software utilizando herramientas reales del entorno profesional.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Además, se fortalecieron habilidades relacionadas con documentación, organización de tareas y desarrollo de software utilizando herramientas reales del entorno profesional.
