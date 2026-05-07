@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="page-wrapper">
+
+ 
+    <!-- FORMULARIO DE LOGIN (REACTIVO) -->
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-container">
+      <h2>Iniciar Sesión</h2>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" formControlName="usuario"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <!-- OJO: SOLO type="submit". Nada de (click)="login()" -->
+      <ion-button expand="block" type="submit">
+        INGRESAR
+      </ion-button>
+    </form>
+
+  </div>
+</ion-content>
