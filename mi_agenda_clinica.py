@@ -44,26 +44,63 @@ def agendar_cita(usuario):
     fecha = input("Ingrese fecha (AAAA-MM-DD): ").strip()
     hora = input("Ingrese hora (HH:MM:SS): ").strip()
 
+    if fecha == "" or hora == "":
+        print("Debe completar todos los campos.")
+        return
+
     sql = "INSERT INTO citas (fecha, hora, id_usuario) VALUES (%s, %s, %s)"
     cursor.execute(sql, (fecha, hora, usuario[0]))
     conexion.commit()
 
     print("Cita agendada correctamente.")
+def editar_cita(usuario):
+    print("\n--- EDITAR CITA ---")
 
-def cancelar_cita(usuario):
-    print("\n--- CANCELAR CITA ---")
     ver_citas(usuario)
 
-    id_cita = input("Ingrese el ID de la cita a cancelar: ").strip()
+    id_cita = input("Ingrese ID de cita: ").strip()
 
-    sql = "DELETE FROM citas WHERE id_cita = %s AND id_usuario = %s"
-    cursor.execute(sql, (id_cita, usuario[0]))
+    nueva_fecha = input("Nueva fecha (AAAA-MM-DD): ").strip()
+    nueva_hora = input("Nueva hora (HH:MM:SS): ").strip()
+    if nueva_fecha == "" or nueva_hora == "":
+        print("Debe completar todos los campos.")
+        return
+
+    sql = """
+    UPDATE citas
+    SET fecha=%s, hora=%s
+    WHERE id_cita=%s AND id_usuario=%s
+    """
+
+    cursor.execute(sql, (nueva_fecha, nueva_hora, id_cita, usuario[0]))
     conexion.commit()
 
     if cursor.rowcount > 0:
-        print("Cita cancelada correctamente.")
+        print("Cita actualizada correctamente.")
     else:
-        print("No se encontró una cita con ese ID.")
+        print("No se pudo actualizar la cita.")
+
+
+def registrar_usuario():
+    print("\n--- REGISTRO DE USUARIO ---")
+
+    nombre = input("Nombre: ").strip()
+    correo = input("Correo: ").strip()
+    contrasena = input("Contraseña: ").strip()
+    rol = input("Rol (paciente/doctor): ").strip()
+    if nombre == "" or correo == "" or contrasena == "" or rol == "":
+        print("Todos los campos son obligatorios.")
+        return
+
+    sql = """
+    INSERT INTO usuarios(nombre, correo, contrasena, rol)
+    VALUES (%s, %s, %s, %s)
+    """
+
+    cursor.execute(sql, (nombre, correo, contrasena, rol))
+    conexion.commit()
+
+    print("Usuario registrado correctamente.")
 
 def menu():
     usuario_activo = iniciar_sesion()
@@ -75,9 +112,10 @@ def menu():
         print("\n--- MENÚ MI AGENDA CLÍNICA ---")
         print("1. Ver citas")
         print("2. Agendar cita")
-        print("3. Cancelar cita")
-        print("4. Salir")
-
+        print("3. Editar cita")
+        print("4. Cancelar cita")
+        print("5. Registrar usuario")
+        print("6. Salir")
         opcion = input("Seleccione una opción: ").strip()
 
         if opcion == "1":
@@ -85,10 +123,15 @@ def menu():
         elif opcion == "2":
             agendar_cita(usuario_activo)
         elif opcion == "3":
-            cancelar_cita(usuario_activo)
+            editar_cita(usuario_activo)
         elif opcion == "4":
+            cancelar_cita(usuario_activo)
+        elif opcion == "5":
+            registrar_usuario()
+        elif opcion == "6":
             print("Saliendo del sistema...")
             break
+
         else:
             print("Opción no válida.")
 
