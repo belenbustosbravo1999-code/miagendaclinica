@@ -91,6 +91,7 @@ El sistema debe permitir eliminar citas registradas.
 
 ```sql
 miagendaclinica
+```
 
 ---
 
