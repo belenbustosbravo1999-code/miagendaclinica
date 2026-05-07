@@ -126,41 +126,22 @@ VALUES(
 'admin'
 );
 
+
+```
 ---
 
-# 9. Manual de Usuario
-Paso 1: Iniciar XAMPP
-Activar:
-Apache
-MySQL
+# 9. Validaciones Implementadas
 
-Paso 2: Ejecutar sistema 
-python mi_agenda_clinica.py
-
-Paso 3: Iniciar sesión
-Correo:
-admin@gmail.com
-Contraseña:
-1234
-
-Paso 4: Utilizar menú
-Ver citas
-Agendar cita
-Editar cita
-Cancelar cita
-Registrar usuario
-
----
-
-# 10. Validaciones Implementadas
+```
 Validación de campos vacíos.
 Validación de usuarios.
 Validación de opciones inválidas.
 Manejo básico de errores.
+```
 
 ---
 
-# 11. Metodología Scrum
+# 10. Metodología Scrum
 Product Backlog
 ID	Tarea	Estado
 1	Crear login	Completado
@@ -172,7 +153,7 @@ ID	Tarea	Estado
 
 ---
 
-# 12. Evidencias
+# 11. Evidencias
 
 El proyecto incluye:
 
@@ -187,7 +168,7 @@ Diagramas
 
 ---
 
-# 13. Conclusión
+# 12. Conclusión
 
 El proyecto permitió aplicar conocimientos de programación en Python, conexión con bases de datos MySQL y metodologías ágiles para el desarrollo de software.
 
