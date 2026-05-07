@@ -1,8 +1,6 @@
 # Ingeniería de Software (PRY3211)
 
-# Evaluación Final Transversal – Parte I
-
-# Proyecto: Mi Agenda Clínica
+# Proyecto: Miagendaclinica
 
 ## Integrantes
 - Belén Bustos
@@ -170,5 +168,5 @@ Diagramas
 
 # 12. Conclusión
 
-El proyecto permitió aplicar conocimientos de programación en Python, conexión con bases de datos MySQL y metodologías ágiles para el desarrollo de software.
+El proyecto permitió aplicar conocimientos de programación en Python, conexión con bases de datos MySQL y metodologías ágiles para el desarrollo de software.git add .
 Además, se fortalecieron habilidades relacionadas con documentación, organización de tareas y desarrollo de software utilizando herramientas reales del entorno profesional.
