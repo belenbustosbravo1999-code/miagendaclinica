@@ -1,25 +1,75 @@
+/* ── Paleta de diseño — siempre tema claro ── */
 :root {
-  /* 🎨 Colores principales de la app */
-  --ion-color-primary: #006d77;
-  --ion-color-secondary: #83c5be;
-  --ion-color-tertiary: #edf6f9;
-  --ion-color-success: #06d6a0;
-  --ion-color-warning: #ffd166;
-  --ion-color-danger: #ef476f;
-  --ion-color-dark: #073b4c;
-  --ion-color-medium: #118ab2;
-  --ion-color-light: #f1faee;
+  /* Tokens propios */
+  --color-bg:        #ffffff;
+  --color-surface:   #ffffff;
+  --color-primary:   #004ac6;
+  --color-text:      #191b23;
+  --color-text-2:    #64748b;
+  --color-border:    #e2e8f0;
+  --color-container: #f1f5f9;
+  --color-separator: #e2e8f0;
 
-  /* 🌈 Personalización extra */
-  --ion-background-color: #e0f7fa;
-  --ion-text-color: #003c46;
-}
+  /* Sistema de colores Ionic */
+  --ion-color-primary:              #004ac6;
+  --ion-color-primary-rgb:          0, 74, 198;
+  --ion-color-primary-contrast:     #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade:        #0040a8;
+  --ion-color-primary-tint:         #1a5ccf;
 
-/* 🌙 Tema oscuro opcional (se activa con prefers-color-scheme: dark) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ion-color-primary: #00afb9;
-    --ion-background-color: #121212;
-    --ion-text-color: #f1f1f1;
-  }
+  --ion-color-secondary:          #64748b;
+  --ion-color-secondary-rgb:      100, 116, 139;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-shade:    #475569;
+  --ion-color-secondary-tint:     #94a3b8;
+
+  --ion-color-success:          #22c55e;
+  --ion-color-success-rgb:      34, 197, 94;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-shade:    #16a34a;
+  --ion-color-success-tint:     #4ade80;
+
+  --ion-color-warning:          #f59e0b;
+  --ion-color-warning-rgb:      245, 158, 11;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-shade:    #d97706;
+  --ion-color-warning-tint:     #fbbf24;
+
+  --ion-color-danger:          #ef4444;
+  --ion-color-danger-rgb:      239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-shade:    #dc2626;
+  --ion-color-danger-tint:     #f87171;
+
+  --ion-color-dark:          #191b23;
+  --ion-color-dark-rgb:      25, 27, 35;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-shade:    #111218;
+  --ion-color-dark-tint:     #31333f;
+
+  --ion-color-medium:          #64748b;
+  --ion-color-medium-rgb:      100, 116, 139;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-shade:    #475569;
+  --ion-color-medium-tint:     #94a3b8;
+
+  --ion-color-light:          #f1f5f9;
+  --ion-color-light-rgb:      241, 245, 249;
+  --ion-color-light-contrast: #191b23;
+  --ion-color-light-shade:    #e2e8f0;
+  --ion-color-light-tint:     #f8fafc;
+
+  /* Superficies Ionic — fijas, nunca oscuras */
+  --ion-background-color:     #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
+  --ion-text-color:           #191b23;
+  --ion-text-color-rgb:       25, 27, 35;
+
+  --ion-card-background:    #ffffff;
+  --ion-item-background:    #ffffff;
+  --ion-toolbar-background: #ffffff;
+  --ion-tab-bar-background: #ffffff;
+
+  --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }

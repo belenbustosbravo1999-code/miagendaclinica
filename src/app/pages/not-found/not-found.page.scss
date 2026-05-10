@@ -1,0 +1,28 @@
+/* ── 404 — Stitch ── */
+ion-content {
+  --background: #faf8ff;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  --padding-bottom: 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #191b23;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 16px;
+  color: #434655;
+  margin-bottom: 40px;
+}
+
+ion-button {
+  max-width: 280px;
+  margin: 0 auto;
+  display: block;
+  --background: #004ac6;
+  --border-radius: 10px;
+}

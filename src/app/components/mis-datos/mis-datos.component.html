@@ -1,34 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Mis Datos</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Plugin Cámara</ion-card-title>
+    <ion-card-subtitle>Animación + Foto</ion-card-subtitle>
+  </ion-card-header>
 
-<ion-content class="ion-padding">
+  <ion-card-content>
+    <ion-button expand="block" (click)="tomarFoto()">
+      Tomar foto
+    </ion-button>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Plugin Cámara</ion-card-title>
-      <ion-card-subtitle>Animación + Foto</ion-card-subtitle>
-    </ion-card-header>
+    <ion-button expand="block" fill="outline" (click)="limpiarFoto()" [disabled]="!fotoBase64">
+      Limpiar foto
+    </ion-button>
 
-    <ion-card-content>
-      <ion-button expand="block" (click)="tomarFoto()">
-        Tomar foto
-      </ion-button>
+    <div *ngIf="fotoBase64" style="margin-top: 16px;" @zoomFade>
+      <ion-img [src]="fotoBase64"></ion-img>
+    </div>
 
-      <ion-button expand="block" color="medium" (click)="limpiarFoto()" [disabled]="!fotoBase64">
-        Limpiar foto
-      </ion-button>
-
-      <div *ngIf="fotoBase64" style="margin-top: 16px;" @zoomFade>
-        <ion-img [src]="fotoBase64"></ion-img>
-      </div>
-
-      <ion-text color="medium" *ngIf="!fotoBase64">
-        <p>No hay foto cargada.</p>
-      </ion-text>
-    </ion-card-content>
-  </ion-card>
-
-</ion-content>
+    <ion-text color="dark" *ngIf="!fotoBase64">
+      <p style="margin-top: 12px; color: #94a3b8; font-size: 14px;">No hay foto cargada.</p>
+    </ion-text>
+  </ion-card-content>
+</ion-card>

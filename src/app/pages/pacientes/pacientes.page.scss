@@ -1,0 +1,64 @@
+/* ── Pacientes — Stitch ── */
+ion-content {
+  --background: var(--ion-background-color);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+}
+
+ion-list {
+  border: 1px solid #c3c6d7;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+ion-item {
+  --background: var(--ion-item-background);
+  --border-color: var(--color-separator);
+  --min-height: 60px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+ion-item:last-child {
+  --border-width: 0;
+}
+
+ion-item h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ion-text-color);
+  margin-bottom: 3px;
+}
+
+ion-item p {
+  font-size: 13px;
+  color: var(--color-text-2);
+}
+
+/* Aviso offline */
+ion-text[color="danger"] p {
+  font-size: 14px;
+  font-weight: 500;
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+/* Estado vacío */
+ion-text[color="dark"] p {
+  font-size: 15px;
+  color: #434655;
+  text-align: center;
+  padding: 32px 0;
+}
+
+@media (min-width: 768px) {
+  ion-content {
+    --padding-start: 24px;
+    --padding-end: 24px;
+  }
+}

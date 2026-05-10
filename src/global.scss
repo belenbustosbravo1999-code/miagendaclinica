@@ -1,14 +1,3 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
-
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -18,20 +7,186 @@
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
+/* Optional CSS utils */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+/* Dark mode del sistema — DESACTIVADO: la app fuerza siempre tema claro */
+/* @import '@ionic/angular/css/palettes/dark.system.css'; */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+/* ══════════════════════════════════════════
+   STITCH — Global Styles
+   ══════════════════════════════════════════ */
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/* ─── Toolbar — siempre blanco con texto oscuro ───────────
+   Hardcodeamos #ffffff para que nunca quede oscuro aunque
+   el sistema esté en dark mode (requisito de diseño). */
+ion-toolbar {
+  --background: #ffffff;
+  --color: #191b23;
+  --border-width: 0 !important;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+ion-title {
+  --color: #191b23;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Cards ───────────────────────────────*/
+ion-card {
+  background: var(--ion-card-background);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: none;
+  margin: 0 0 12px;
+}
+
+ion-card-header {
+  padding: 16px 16px 8px;
+}
+
+ion-card-content {
+  padding: 8px 16px 16px;
+}
+
+ion-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ion-text-color);
+}
+
+ion-card-subtitle {
+  font-size: 14px;
+  color: var(--color-text-2);
+}
+
+/* ─── Items ────────────────────────────────
+   Igual: no hardcodear #ffffff; usar variables */
+ion-item {
+  --background: var(--ion-item-background);
+  --border-color: var(--color-separator);
+  --color: var(--ion-text-color);
+  --min-height: 52px;
+  font-size: 16px;
+}
+
+/* Labels: sólo dentro de items; no tocar
+   los de segment-button ni tab-button */
+ion-item ion-label {
+  font-size: 16px;
+  color: var(--ion-text-color);
+}
+
+ion-item h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ion-text-color);
+  margin-bottom: 2px;
+}
+
+ion-item p {
+  font-size: 13px;
+  color: var(--color-text-2);
+}
+
+/* Íconos de acción en items */
+ion-item ion-icon[slot="start"],
+ion-item ion-icon[slot="end"] {
+  color: var(--color-primary);
+}
+
+/* ─── Botones ──────────────────────────────*/
+ion-button {
+  --border-radius: 10px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ─── Segmentos ────────────────────────────*/
+ion-segment {
+  --background: var(--color-container);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+ion-segment-button {
+  --border-radius: 8px;
+  --color: var(--color-text-2);
+  --color-checked: var(--color-primary);
+  --indicator-color: var(--ion-card-background);
+  --indicator-box-shadow: 0 1px 4px rgba(0, 74, 198, 0.15);
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 34px;
+}
+
+/* ─── Listas ───────────────────────────────*/
+ion-list {
+  background: var(--ion-card-background);
+  padding: 0;
+}
+
+ion-list-header {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 16px 16px 8px;
+  background: transparent;
+}
+
+/* ─── Tab bar — siempre blanco con íconos oscuros ─────────
+   Igual que toolbar: hardcodeamos para que nunca quede oscuro. */
+ion-tab-bar {
+  --background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  height: 60px;
+  padding-bottom: var(--ion-safe-area-bottom, 0px);
+}
+
+ion-tab-button {
+  --color: #64748b;           /* slate-500: contraste 4.6:1 sobre blanco ✓ */
+  --color-selected: #004ac6;  /* azul primario */
+  --background: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --ripple-color: rgba(0, 74, 198, 0.12);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: none;
+}
+
+/* ─── Padding inferior para la tab bar ─────*/
+ion-content {
+  --padding-bottom: 72px;
+}
+
+/* ─── Responsive ───────────────────────────*/
+@media (min-width: 768px) {
+  ion-toolbar {
+    --padding-start: 24px;
+    --padding-end: 24px;
+  }
+}

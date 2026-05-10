@@ -1,7 +1,16 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { addIcons } from 'ionicons';
+import {
+  homeOutline, home,
+  calendarOutline, calendar,
+  peopleOutline, people,
+  personOutline, person,
+  logOutOutline,
+  medkitOutline,
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +20,31 @@ import { RouterModule } from '@angular/router';
   imports: [IonicModule, CommonModule, RouterModule],
 })
 export class AppComponent {
-  public appPages = [
-    { title: 'Inicio', url: '/home', icon: 'home' },
-    { title: 'Pacientes', url: '/pacientes', icon: 'people' },
-    { title: 'Citas', url: '/citas', icon: 'calendar' },
-  ];
+  constructor(public router: Router) {
+    addIcons({
+      'home-outline': homeOutline,
+      'home': home,
+      'calendar-outline': calendarOutline,
+      'calendar': calendar,
+      'people-outline': peopleOutline,
+      'people': people,
+      'person-outline': personOutline,
+      'person': person,
+      'log-out-outline': logOutOutline,
+      'medkit-outline': medkitOutline,
+    });
+  }
 
-  constructor() {}
+  get mostrarTabs(): boolean {
+    const url = this.router.url;
+    return url !== '/' && !url.startsWith('/login') && !url.startsWith('/not-found');
+  }
+
+  isActive(path: string): boolean {
+    return this.router.url.startsWith(path);
+  }
+
+  navTo(path: string): void {
+    this.router.navigateByUrl(path);
+  }
 }
