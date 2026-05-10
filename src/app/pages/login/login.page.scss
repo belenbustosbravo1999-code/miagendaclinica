@@ -1,0 +1,115 @@
+/* ── Login — Stitch ── */
+.login-content {
+  --background: #faf8ff;
+  --padding-bottom: 0;
+}
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 48px 20px 40px;
+}
+
+/* ── Cabecera ── */
+.login-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.login-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: #f3f3fe;
+  border: 1px solid #c3c6d7;
+  border-radius: 18px;
+  margin-bottom: 16px;
+}
+
+.login-icon {
+  font-size: 30px;
+  color: #004ac6;
+}
+
+.app-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #004ac6;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #434655;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ── Card del formulario ── */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border: 1px solid #c3c6d7;
+  border-radius: 12px;
+  padding: 24px 20px;
+}
+
+/* ── Grupos de campo ── */
+.field-group {
+  margin-bottom: 16px;
+}
+
+.field-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #434655;
+  margin-bottom: 6px;
+}
+
+.form-item {
+  --background: #faf8ff;
+  --border-radius: 8px;
+  --padding-start: 12px;
+  --inner-padding-end: 12px;
+  border: 1px solid #c3c6d7;
+  border-radius: 8px;
+  font-size: 15px;
+  --color: #191b23;
+
+  &:focus-within {
+    border-color: #004ac6;
+  }
+}
+
+/* ── Botón primario ── */
+.submit-btn {
+  margin-top: 24px;
+  --background: #004ac6;
+  --background-hover: #0040a8;
+  --background-activated: #0040a8;
+  --border-radius: 10px;
+  height: 48px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ── Botón secundario ── */
+.switch-btn {
+  margin-top: 10px;
+  --border-radius: 10px;
+  --color: #004ac6;
+  --border-color: #c3c6d7;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+}

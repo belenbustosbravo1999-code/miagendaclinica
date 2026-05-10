@@ -1,16 +1,62 @@
+/* ── Tab bar y toolbar: estilos en global.scss (evita encapsulamiento Angular) ── */
+
+/* ── Menú lateral (ion-menu) ─────────────────────────────────────────────────
+   Preparado para cuando se reactive el side menu.
+   Ítem activo: texto azul #004ac6 + borde izquierdo 3px azul.
+   Resto de ítems: texto oscuro #1e293b sobre fondo blanco.            */
 ion-menu {
-  --background: #e0f7fa;
-}
+  --background: #ffffff;
 
-ion-toolbar {
-  --background: #b2ebf2;
-}
+  ion-header ion-toolbar {
+    --background: #ffffff;
+    --color: #191b23;
+    border-bottom: 1px solid #e2e8f0;
+  }
 
-ion-item {
-  --background: #e0f7fa;
-  --border-color: #b2ebf2;
-}
+  ion-content {
+    --background: #ffffff;
+  }
 
-ion-label {
-  font-weight: 500;
+  ion-list {
+    background: #ffffff;
+    padding: 8px 0;
+  }
+
+  ion-item {
+    --background: #ffffff;
+    --color: #1e293b;
+    --border-color: transparent;
+    --min-height: 48px;
+    --padding-start: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+
+    ion-icon {
+      color: #64748b;
+      font-size: 20px;
+      margin-right: 12px;
+    }
+
+    ion-label {
+      color: #1e293b;
+    }
+  }
+
+  /* Ítem activo: borde izquierdo azul + texto azul */
+  ion-item.active-menu-item,
+  ion-item[aria-selected="true"] {
+    border-left-color: #004ac6;
+    --color: #004ac6;
+
+    ion-icon {
+      color: #004ac6;
+    }
+
+    ion-label {
+      color: #004ac6;
+      font-weight: 600;
+    }
+  }
 }

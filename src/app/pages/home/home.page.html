@@ -4,17 +4,51 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding home-content">
 
+  <!-- ── Encabezado de bienvenida ── -->
+  <div class="home-header">
+    <h1 class="home-title">MiAgendaClínica</h1>
+    <p class="home-subtitle">Panel de inicio</p>
+  </div>
+
+  <!-- ── Tarjetas de métricas ── -->
+  <div class="metrics-grid">
+
+    <div class="metric-card">
+      <div class="metric-icon-wrap">
+        <ion-icon name="calendar-outline"></ion-icon>
+      </div>
+      <span class="metric-label">Mis Citas</span>
+      <span class="metric-value">—</span>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-wrap">
+        <ion-icon name="people-outline"></ion-icon>
+      </div>
+      <span class="metric-label">Pacientes</span>
+      <span class="metric-value">—</span>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-wrap">
+        <ion-icon name="person-outline"></ion-icon>
+      </div>
+      <span class="metric-label">Mi Perfil</span>
+      <span class="metric-value">Ver</span>
+    </div>
+
+  </div>
+
+  <!-- ── Secciones del perfil ── -->
   <ion-segment [(ngModel)]="segmentoActual">
     <ion-segment-button value="mis-datos">
       <ion-label>Mis Datos</ion-label>
     </ion-segment-button>
-
     <ion-segment-button value="experiencia">
       <ion-label>Experiencia</ion-label>
     </ion-segment-button>
-
     <ion-segment-button value="certificaciones">
       <ion-label>Certificaciones</ion-label>
     </ion-segment-button>
@@ -25,15 +59,18 @@
       <div *ngSwitchCase="'mis-datos'" @fadeSlide>
         <app-mis-datos></app-mis-datos>
       </div>
-
       <div *ngSwitchCase="'experiencia'" @fadeSlide>
         <app-experiencia-laboral></app-experiencia-laboral>
       </div>
-
       <div *ngSwitchCase="'certificaciones'" @fadeSlide>
         <app-certificaciones></app-certificaciones>
       </div>
     </ng-container>
+  </div>
+
+  <!-- ── Footer ── -->
+  <div class="home-footer">
+    <p>Desarrollado por Belén Bustos · Matías Ureta</p>
   </div>
 
 </ion-content>

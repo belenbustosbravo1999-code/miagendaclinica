@@ -6,7 +6,7 @@
 
 <ion-content class="ion-padding">
 
-  <ion-text color="warning" *ngIf="modoOffline">
+  <ion-text color="danger" *ngIf="modoOffline">
     <p><strong>Sin internet:</strong> mostrando datos almacenados.</p>
   </ion-text>
 
@@ -20,7 +20,7 @@
   </ion-list>
 
   <ng-template #sinDatos>
-    <ion-text color="medium">
+    <ion-text color="dark">
       <p>No hay pacientes para mostrar.</p>
     </ion-text>
   </ng-template>

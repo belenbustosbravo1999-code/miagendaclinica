@@ -1,0 +1,27 @@
+/* ── MisDatos — Stitch ── */
+ion-card {
+  margin: 0;
+}
+
+ion-button {
+  margin-top: 10px;
+}
+
+ion-button[fill="outline"] {
+  --border-color: #c3c6d7;
+  --color: #434655;
+}
+
+ion-img {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #c3c6d7;
+  margin-top: 12px;
+}
+
+p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-top: 12px;
+  text-align: center;
+}
